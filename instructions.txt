@@ -1,0 +1,153 @@
+Microsoft Windows [Version 10.0.14393]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2016. Все права защищены.
+
+C:\Users\Admin> cd D:\User\djangogirls
+
+C:\Users\Admin>cd D:\User\djangogirls
+
+C:\Users\Admin>D:
+
+D:\User\djangogirls>python3 -m venv myvenv
+"python3" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+D:\User\djangogirls>python -m venv myvenv
+
+D:\User\djangogirls>myvenv\Scripts\activate
+(myvenv) D:\User\djangogirls>pip install django==1.9
+Collecting django==1.9
+  Downloading Django-1.9-py2.py3-none-any.whl (6.6MB)
+    100% |################################| 6.6MB 170kB/s
+Installing collected packages: django
+Successfully installed django-1.9
+You are using pip version 8.1.1, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(myvenv) D:\User\djangogirls>django-admin startproject mysite .
+
+(myvenv) D:\User\djangogirls>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, sessions, contenttypes
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying sessions.0001_initial... OK
+
+(myvenv) D:\User\djangogirls>python manage.py runserver:
+Unknown command: 'runserver:'
+Type 'manage.py help' for usage.
+
+(myvenv) D:\User\djangogirls>python manage.py runserver 0:8000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 21, 2017 - 09:23:28
+Django version 1.9, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CTRL-BREAK.
+Not Found: /
+[21/Apr/2017 09:23:50] "GET / HTTP/1.1" 200 1767
+Not Found: /favicon.ico
+[21/Apr/2017 09:23:52] "GET /favicon.ico HTTP/1.1" 404 1936
+^C
+(myvenv) D:\User\djangogirls>python manage.py startapp blog
+
+(myvenv) D:\User\djangogirls>python manage.py makemigrations blog
+Migrations for 'blog':
+  0001_initial.py:
+    - Create model Post
+
+(myvenv) D:\User\djangogirls>python manage.py migrate blog
+Operations to perform:
+  Apply all migrations: blog
+Running migrations:
+  Rendering model states... DONE
+  Applying blog.0001_initial... OK
+
+(myvenv) D:\User\djangogirls>python manage.py runserverb
+Unknown command: 'runserverb'
+Type 'manage.py help' for usage.
+
+(myvenv) D:\User\djangogirls>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 21, 2017 - 09:41:18
+Django version 1.9, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[21/Apr/2017 09:41:28] "GET /admin/ HTTP/1.1" 302 0
+[21/Apr/2017 09:41:28] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1683
+[21/Apr/2017 09:41:29] "GET /static/admin/css/base.css HTTP/1.1" 200 15897
+[21/Apr/2017 09:41:29] "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+[21/Apr/2017 09:41:29] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[21/Apr/2017 09:41:29] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[21/Apr/2017 09:41:29] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+^C
+(myvenv) D:\User\djangogirls>python manage.py createsuperuser
+Username (leave blank to use 'admin'): admin
+Email address: vetalslat@gmail.com
+Password:
+Password (again):
+This password is too short. It must contain at least 8 characters.
+This password is entirely numeric.
+Password:
+Password (again):
+This password is too short. It must contain at least 8 characters.
+This password is entirely numeric.
+Password:
+Password (again):
+This password is too short. It must contain at least 8 characters.
+This password is entirely numeric.
+Password:
+Password (again):
+Error: Your passwords didn't match.
+Password:
+Password (again):
+Superuser created successfully.
+
+(myvenv) D:\User\djangogirls>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 21, 2017 - 09:47:26
+Django version 1.9, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[21/Apr/2017 09:47:28] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1683
+[21/Apr/2017 09:47:29] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[21/Apr/2017 09:47:29] "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[21/Apr/2017 09:47:29] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[21/Apr/2017 09:47:29] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[21/Apr/2017 09:47:29] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[21/Apr/2017 09:47:40] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[21/Apr/2017 09:47:41] "GET /admin/ HTTP/1.1" 200 3401
+[21/Apr/2017 09:47:41] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 434
+[21/Apr/2017 09:47:41] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[21/Apr/2017 09:47:41] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21/Apr/2017 09:47:41] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+^C
+(myvenv) D:\User\djangogirls>Initialized empty Git repository in ~/djangogirls/.git/
+"Initialized" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+(myvenv) D:\User\djangogirls>init Initialized empty Git repository in ~/djangogirls/.git/
+"init" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+(myvenv) D:\User\djangogirls>deactivate
+D:\User\djangogirls>git int
+"git" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+D:\User\djangogirls>
